@@ -172,7 +172,7 @@ public class SudokuDatabase {
 		return inbox;
 	}
 
-	/**
+	/*
 	 * Find folder by name. If no folder is found, null is returned.
 	 *
 	 * @param folderName
