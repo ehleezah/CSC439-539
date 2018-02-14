@@ -176,7 +176,7 @@ public class SudokuDatabase {
 	 * Find folder by name. If no folder is found, null is returned.
 	 *
 	 * @param folderName
-	 * @param db
+	 * @param
 	 * @return
 	 */
 	public FolderInfo findFolder(String folderName) {
@@ -392,9 +392,8 @@ public class SudokuDatabase {
 
 		if (mInsertSudokuStatement == null) {
 			SQLiteDatabase db = mOpenHelper.getWritableDatabase();
-			mInsertSudokuStatement = db.compileStatement(
-					"insert into sudoku (folder_id, created, state, time, last_played, data, puzzle_note, command_stack) values (?, ?, ?, ?, ?, ?, ?, ?)"
-			);
+			String sql = "insert into sudoku (folder_id, created, state, time, last_played, data, puzzle_note, command_stack) values (?, ?, ?, ?, ?, ?, ?, ?)";
+			mInsertSudokuStatement = db.compileStatement(sql);
 		}
 
 		mInsertSudokuStatement.bindLong(1, folderID);

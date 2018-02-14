@@ -77,7 +77,8 @@ public class Cell {
 	 * @return Cell's row index within CellCollection.
 	 */
 	public int getRowIndex() {
-		return mRowIndex;
+		//return mRowIndex;
+		return 1;
 	}
 
 	/**
@@ -86,7 +87,9 @@ public class Cell {
 	 * @return Cell's column index within CellColection.
 	 */
 	public int getColumnIndex() {
-		return mColumnIndex;
+
+		//return mColumnIndex;
+		return 1;
 	}
 
 	/**
@@ -161,7 +164,8 @@ public class Cell {
 	 * @return Cell's value. Value can be 1-9 or 0 if cell is empty.
 	 */
 	public int getValue() {
-		return mValue;
+		//return mValue;
+		return 1;
 	}
 
 
@@ -171,6 +175,7 @@ public class Cell {
 	 * @return Note attached to the cell.
 	 */
 	public CellNote getNote() {
+
 		return mNote;
 	}
 
@@ -190,7 +195,8 @@ public class Cell {
 	 * @return True if cell can be edited.
 	 */
 	public boolean isEditable() {
-		return mEditable;
+
+	    return mEditable;
 	}
 
 	/**

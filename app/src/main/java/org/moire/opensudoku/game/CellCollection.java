@@ -331,7 +331,7 @@ public class CellCollection {
 	 * created by {@link #serialize(StringBuilder)} or {@link #serialize()} method).
 	 * earlier.
 	 *
-	 * @param note
+	 * @param
 	 */
 	public static CellCollection deserialize(String data) {
 		// TODO: use DATA_PATTERN_VERSION_1 to validate and extract puzzle data
