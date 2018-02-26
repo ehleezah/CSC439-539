@@ -265,6 +265,7 @@ public class SudokuGame {
 	 */
 	public void start() {
 		mState = GAME_STATE_PLAYING;
+		//System.currentTimeMillis();
 		resume();
 	}
 
@@ -281,7 +282,6 @@ public class SudokuGame {
 		// save time we have spent playing so far - it will be reseted after resuming
 		mTime += SystemClock.uptimeMillis() - mActiveFromTime;
 		mActiveFromTime = -1;
-
 		setLastPlayed(System.currentTimeMillis());
 	}
 

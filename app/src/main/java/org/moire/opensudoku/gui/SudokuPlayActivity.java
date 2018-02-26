@@ -144,7 +144,7 @@ public class SudokuPlayActivity extends Activity {
 		if (mSudokuGame.getState() == SudokuGame.GAME_STATE_NOT_STARTED) {
 			mSudokuGame.start();
 		} else if (mSudokuGame.getState() == SudokuGame.GAME_STATE_PLAYING) {
-			mSudokuGame.resume();
+			//mSudokuGame.resume();
 		}
 
 		if (mSudokuGame.getState() == SudokuGame.GAME_STATE_COMPLETED) {

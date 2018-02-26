@@ -327,7 +327,7 @@ public class SudokuDatabase {
 				s.setId(id);
 				s.setCreated(created);
 				s.setCells(CellCollection.deserialize(data));
-				s.setLastPlayed(lastPlayed);
+		//		s.setLastPlayed(lastPlayed);
 				s.setState(state);
 				s.setTime(time);
 				s.setNote(note);

@@ -21,6 +21,8 @@
 package org.moire.opensudoku.game;
 
 import org.moire.opensudoku.R;
+
+import android.annotation.SuppressLint;
 import android.content.Context;
 
 /**
@@ -64,6 +66,7 @@ public class FolderInfo {
 		this.name = name;
 	}
 
+	@SuppressLint("StringFormatMatches")
 	public String getDetail(Context c) {
 		StringBuilder sb = new StringBuilder();
 
