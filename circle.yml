@@ -4,7 +4,7 @@
 
 general:
     artifacts:
-        - /home/ubuntu/Cenza_sudoko_game/app/build/outputs/apk/
+        - /home/ubuntu/Cenza_soduko_game/app/build/outputs/apk/
 
 machine:
     environment:
