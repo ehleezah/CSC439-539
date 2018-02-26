@@ -1,45 +1,14 @@
-#
-
-# Build configuration for Circle CI
-
-#
-
-
-
-general:
-
-    artifacts:
-
-        - /home/ubuntu/Cenza_sudoku_game/app/build/outputs/apk/
-
-
-
 machine:
-
-    environment:
-
-        ANDROID_HOME: /usr/local/android-sdk-linux
-
-
+  environment:
+    ANDROID_HOME: /home/ubuntu/android
 
 dependencies:
-
-    override:
-        - chmod +x gradlew
-        - ./install-dependencies.sh
-
-        - echo y | android update sdk --no-ui --all --filter tools,platform-tools,build-tools-19.1.0,android-19,extra-google-m2repository,extra-google-google_play_services,extra-android-support
-
-        - ANDROID_HOME=/usr/local/android-sdk-linux ./gradlew dependencies
-
-
-
+  cache_directories:
+    - ~/.android
+    - ~/android
+  override:
+    - ./install-dependencies.sh
 
 test:
-
-    override:
-        - chmod +x gradlew
-
-#        - (./gradlew assemble):
-
-            #timeout: 360
+  override:
+    - ./gradlew build
