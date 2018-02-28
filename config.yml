@@ -11,8 +11,8 @@ jobs:
       JVM_OPTS: -Xmx3200m
     steps:
       - checkout
-      - run: sdkmanager --install "ndk-bundle"
-      - run: sdkmanager --licenses
+      - run:
+          command: sleep 5 && while [ 1 ]; do sleep 1; echo y; done ) | android update sdk --no-ui --all --filter "tools,android-26,build-tools-26.0.0,platform-tools,android-26,extra-google-m2repository,extra-android-m2repository,extra-android-support,extra-google-google_play_services"
       - restore_cache:
           key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
       - run:
