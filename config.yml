@@ -2,7 +2,7 @@
 # Build configuration for Circle CI
 #
 
-version: 2
+version: 1
 jobs:
   build:
     working_directory: ~/code
