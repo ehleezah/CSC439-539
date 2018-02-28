@@ -5,10 +5,11 @@ android {
     buildToolsVersion '26.0.2'
     defaultConfig {
         applicationId 'org.moire.opensudoku'
-        minSdkVersion 14
+        minSdkVersion 21
         targetSdkVersion 22
         versionCode 20180117
         versionName "2.4.3"
+        multiDexEnabled true
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
