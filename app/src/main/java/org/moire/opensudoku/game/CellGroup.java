@@ -32,7 +32,7 @@ import java.util.Map;
  * @author romario
  */
 public class CellGroup {
-	private Cell[] mCells = new Cell[CellCollection.SUDOKU_SIZE];
+	public Cell[] mCells = new Cell[CellCollection.SUDOKU_SIZE];
 	private int mPos = 0;
 
 	public void addCell(Cell cell) {
@@ -50,7 +50,7 @@ public class CellGroup {
 	 *
 	 * @return True if validation is successful.
 	 */
-	protected boolean validate() {
+	public boolean validate() {
 		boolean valid = true;
 
 		Map<Integer, Cell> cellsByValue = new HashMap<Integer, Cell>();
