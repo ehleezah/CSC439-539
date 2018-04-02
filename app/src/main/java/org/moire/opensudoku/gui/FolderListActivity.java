@@ -87,7 +87,7 @@ public class FolderListActivity extends ListActivity {
 		super.onCreate(savedInstanceState);
 
 		setContentView(R.layout.folder_list);
-		View getMorePuzzles = (View) findViewById(R.id.get_more_puzzles);
+		View getMorePuzzles = (View)findViewById(R.id.get_more_puzzles);
 
 		setDefaultKeyMode(DEFAULT_KEYS_SHORTCUT);
 		// Inform the list we provide context menus for items
