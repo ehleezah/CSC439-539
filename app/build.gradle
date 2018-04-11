@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'org.sonarqube'
 
 
 android {
@@ -32,24 +33,38 @@ android {
 
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile 'com.android.support:appcompat-v7:26.1.0'
-    testCompile 'junit:junit:4.12'
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    testImplementation 'junit:junit:4.12'
     //Espresso dependencies
-    androidTestCompile('com.android.support.test.espresso:espresso-core:3.0.1') {
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:3.0.1') {
         exclude group: 'com.android.support', module: 'support-annotations'
     }
-    androidTestCompile 'com.android.support.test.espresso:espresso-contrib:3.0.1'
-    androidTestCompile 'com.android.support.test.espresso:espresso-intents:3.0.1'
-    androidTestCompile 'com.android.support.test.espresso:espresso-accessibility:3.0.1'
-    androidTestCompile 'com.android.support.test.espresso:espresso-web:3.0.1'
-    androidTestCompile 'com.android.support.test.espresso.idling:idling-concurrent:3.0.1'
-    androidTestCompile 'com.android.support.test.espresso:espresso-idling-resource:3.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-contrib:3.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-intents:3.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-accessibility:3.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-web:3.0.1'
+    androidTestImplementation'com.android.support.test.espresso.idling:idling-concurrent:3.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-idling-resource:3.0.1'
     //AndroidJUnitRunner and JUnit Rules
-    androidTestCompile('com.android.support.test:runner:1.0.1') {
+    androidTestImplementation('com.android.support.test:runner:1.0.1') {
         exclude group: 'com.android.support', module: 'support-annotations'
     }
-    androidTestCompile 'com.android.support.test:rules:1.0.1'
+    androidTestImplementation 'com.android.support.test:rules:1.0.1'
     compile 'com.android.support:support-annotations:27.0.2'
 }
 
+sonarqube {
+    properties {
+        property 'sonar.projectName', 'Android Soduko project'
+        property 'sonar.working.directory', '$project.buildDir/sonar'
+        property 'sonar.projectVersion', '1'
+        property 'sonar.scm.provider', 'svn'
+        property 'sonar.sources', 'src/main/java'
+        property 'sonar.language', 'java'
+        property 'sonar.sourceEncoding', 'UTF-8'
+        property 'sonar.java.binaries', 'build'
+        property 'sonar.java.test.binaries', 'build'
+
+    }
+}
