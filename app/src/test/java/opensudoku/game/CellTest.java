@@ -16,6 +16,7 @@ import static junit.framework.Assert.assertNotNull;
 import static junit.framework.Assert.assertTrue;
 
 import java.lang.IllegalArgumentException;
+import java.util.StringTokenizer;
 
 /**
  * Created by cyprian on 2/12/2018.
@@ -112,12 +113,12 @@ public class CellTest {
     }
 
     @Test
-    /*public void testDeserialize() throws Exception {
-        String str = "1 2 3 4 5 6";
-        StringTokenizer st = new StringTokenizer(str);
-        Cell testCell = Cell.deserialize(str);
-        assertEquals(testCell, Cell.deserialize(str));
-    }*/
+//    public void testDeserialize() throws Exception {
+//        String str = "1 2 3 4 5 6";
+//        StringTokenizer st = new StringTokenizer(str);
+//        Cell testCell = Cell.deserialize(str);
+//        assertEquals(testCell, Cell.deserialize(str));
+//    }
 
 
     public void testSerialize() throws Exception {
