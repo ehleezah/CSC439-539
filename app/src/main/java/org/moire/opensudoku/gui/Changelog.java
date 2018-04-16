@@ -59,12 +59,13 @@ public class Changelog {
 
 	private String getChangelogFromResources() {
 		InputStream is = null;
+		Reader in = null;
 		try {
 			is = mContext.getResources().openRawResource(R.raw.changelog);
 
 			final char[] buffer = new char[0x10000];
 			StringBuilder out = new StringBuilder();
-			Reader in = new InputStreamReader(is, "UTF-8");
+			in = new InputStreamReader(is, "UTF-8");
 			int read;
 			do {
 				read = in.read(buffer, 0, buffer.length);
@@ -72,7 +73,7 @@ public class Changelog {
 					out.append(buffer, 0, read);
 				}
 			} while (read >= 0);
-
+				in.close();
 			return out.toString();
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -81,6 +82,7 @@ public class Changelog {
 			if (is != null) {
 				try {
 					is.close();
+
 				} catch (IOException e) {
 					e.printStackTrace();
 					Log.e(TAG, "Error when reading changelog from raw resources.", e);
