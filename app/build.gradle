@@ -28,8 +28,20 @@ android {
     }
     productFlavors {
     }
+
 }
 
+
+
+subprojects {
+    sonarqube {
+        androidVariant 'fullDebug'
+        properties {
+            property "sonar.sources", "src"
+            property "sonar.exclusions", "**/*Generated.java"
+        }
+    }
+}
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')

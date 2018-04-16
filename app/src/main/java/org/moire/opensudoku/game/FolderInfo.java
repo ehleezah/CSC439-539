@@ -101,7 +101,6 @@ public class FolderInfo {
 			if (unsolvedCount == 0 && puzzleCount != 0) {
 				sb.append(" (").append(c.getString(R.string.all_solved)).append(")");
 			}
-
 		}
 
 		return sb.toString();
@@ -109,3 +108,6 @@ public class FolderInfo {
 	}
 
 }
+
+
+
