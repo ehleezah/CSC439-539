@@ -334,7 +334,7 @@ public class SudokuDatabase {
 
 				if (s.getState() == SudokuGame.GAME_STATE_PLAYING) {
 				    String command_stack =  c.getString(c.getColumnIndex(SudokuColumns.COMMAND_STACK));
-				    if (command_stack != null  && command_stack != "") {
+				    if (command_stack != null  && !command_stack.equals("")) {
                         s.setCommandStack(CommandStack.deserialize(command_stack, s.getCells()));
                     }
                 }

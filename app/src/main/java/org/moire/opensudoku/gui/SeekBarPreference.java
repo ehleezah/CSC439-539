@@ -220,7 +220,7 @@ public class SeekBarPreference extends DialogPreference {
 	private void updateValueLabel(int progress) {
 		if (mValueLabel != null) {
 			int value = progress + mMin;
-			if (mValueFormat != null && mValueFormat != "") {
+			if (mValueFormat != null && !mValueFormat.equals("")) {
 				mValueLabel.setText(String.format(mValueFormat, value));
 			} else {
 				mValueLabel.setText(String.valueOf(value));

@@ -86,7 +86,7 @@ public class FileExportTask extends AsyncTask<FileExportTaskParams, Integer, Voi
 			// create dir if it does not exists already
 			File dir = new File(par.file.getParent());
 			if (!dir.exists()) {
-				dir.mkdirs();
+				boolean works = dir.mkdirs();
 			}
 
 			result.file = par.file;
@@ -143,7 +143,10 @@ public class FileExportTask extends AsyncTask<FileExportTaskParams, Integer, Voi
 			Log.e(Const.TAG, "Error while exporting file.", e);
 			result.successful = false;
 			return result;
-		} finally {
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		finally {
 			if (cursor != null) cursor.close();
 			if (database != null) database.close();
 			if (writer != null) {
@@ -178,8 +181,8 @@ public class FileExportTask extends AsyncTask<FileExportTaskParams, Integer, Voi
 		/**
 		 * Occurs when export is finished.
 		 *
-		 * @param importSuccessful Indicates whether export was successful.
-		 * @param folderId         Contains id of imported folder, or -1 if multiple folders were imported.
+		 * @param //importSuccessful Indicates whether export was successful.
+		 * @param //folderId         Contains id of imported folder, or -1 if multiple folders were imported.
 		 */
 		void onExportFinished(FileExportTaskResult result);
 	}
